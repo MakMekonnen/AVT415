@@ -77,6 +77,9 @@ body {
     border-top-left-radius: 70%;
     border-top-right-radius: 25%;
     border: 2px solid #223b05;
+        box-shadow:
+        inset -15px 10 25px rgba(1, 28, 2, 0.682),
+        inset 15px 10 25px rgba(28, 230, 92, 0.431);
 }
 
 .R-oval, .R2-oval, .R3-oval, .middle {
