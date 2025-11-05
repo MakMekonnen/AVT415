@@ -1,42 +1,53 @@
 body {
     background: rgb(27, 1, 28);
-    margin:10%;
-    margin-top: 200px;
+    height: 100vh; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
 }
 
 .pumpkin {
     display: flex;
     justify-content: center;
+    background-color: #b56713;
+    border-radius: 50%;
+    border: 1px solid #3b2105;
+    width: 750px;
+    height: 50%;
+    position:relative;
 }
 
 .R-oval {
     height: 500px;
-    width: 200px;
-    border-right: 3px solid rgb(244, 240, 240);
-    border-top: 1px solid rgb(244, 240, 240);
-    border-bottom: 1px solid rgb(244, 240, 240);
-    background-color: #8e4d07;
+    width: 300px;
+    border-right: 3px solid rgb(17, 10, 1);
+    border-top: 1px solid rgb(17, 10, 1);
+    border-bottom: 1px solid rgb(17, 10, 1);
+    background-color: #c67115;
     border-radius: 50%;
+    z-index: 1;
 }
 .R2-oval {
     height: 500px;
     width: 300px;
-    border-right: 3px solid rgb(244, 240, 240);
-    border-top: 1px solid rgb(244, 240, 240);
-    border-bottom: 1px solid rgb(244, 240, 240);
-    background-color: #8e4d078c;
+    border-right: 3px solid rgb(17, 10, 1);
+    border-top: 1px solid rgb(17, 10, 1);
+    border-bottom: 1px solid rgb(17, 10, 1);
+    background-color: #c67219;
     border-radius: 50%;
-    margin-right: 40px
+    padding-right: 40px;
+    z-index: 2;
 }
 .R3-oval {
     height: 500px;
     width: 400px;
-    border-right: 3px solid rgb(244, 240, 240);
-    border-top: 1px solid rgb(244, 240, 240);
-    border-bottom: 1px solid rgb(244, 240, 240);
-    background-color: #8e4d076d;
+    border-right: 3px solid rgb(17, 10, 1);
+    border-top: 1px solid rgb(17, 10, 1);
+    border-bottom: 1px solid rgb(17, 10, 1);
+    background-color: #a45f15;
     border-radius: 50%;
-    margin-right: 80px
+    padding-right: 80px;
+    z-index: 1;
 }
 
 .mirrored {
@@ -45,19 +56,74 @@ body {
 
 .middle {
     height: 500px;
-    width: 400px;
-    right: 100px;
-    border: 4px solid rgb(244, 240, 240);
-    background-color: #8e4d07;
+    width: 200px;
+    padding-left: 200px;
+    border: 3px solid rgb(17, 10, 1);
+    background-color: #e07f18;
     border-radius: 50%;
     position: absolute;
-    transform: translateX(-50%);
-    z-index: 2;
+    z-index: 5;
 }
 
 .stem {
+    position: absolute;
+    left: 50%;
+    top:-69px;
+    padding-top: 2px;
     background-color: #0a8708;
-    width:20px;
-    height:100px;
-    z-index: 1;
+    width: 40px;
+    height: 100px;
+    z-index: 4;
+    border-top-left-radius: 70%;
+    border-top-right-radius: 25%;
+    border: 2px solid #223b05;
+}
+
+.R-oval, .R2-oval, .R3-oval, .middle {
+    border-color: #3b2105;
+    box-shadow:
+        inset -15px 10 25px rgba(0, 0, 0, 0.682),
+        inset 15px 10 25px rgba(230, 122, 28, 0.431);
+}
+
+.pumpkin-glow {
+    display: inline-block;
+    border-radius: 50%;
+    animation: halloweenGlow 9s infinite ease-in-out;
+    transition: box-shadow 1s ease-in-out;
+}
+
+@keyframes halloweenGlow {
+  0% {
+    box-shadow:
+      inset 0 0 50px #ff9900,      
+      inset 20px 0 80px #ff00ff,
+      inset -20px 0 80px #ff9900,
+      0 0 60px #ff9900,
+      0 0 100px #ff00ff;
+  }
+  25% {
+    box-shadow:
+      inset 0 0 50px #8b00ff,      
+      inset 20px 0 80px #00ff88,
+      inset -20px 0 80px #8b00ff,
+      0 0 60px #8b00ff,
+      0 0 100px #00ff88;
+  }
+  50% {
+    box-shadow:
+      inset 0 0 50px #00ff44,      
+      inset 20px 0 80px #ff6600,
+      inset -20px 0 80px #00ff44,
+      0 0 60px #00ff44,
+      0 0 100px #ff6600;
+  }
+  100% {
+    box-shadow:
+      inset 0 0 50px #ff9900,
+      inset 20px 0 80px #ff00ff,
+      inset -20px 0 80px #ff9900,
+      0 0 60px #ff9900,
+      0 0 100px #ff00ff;
+  }
 }
